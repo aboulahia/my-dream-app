@@ -17,16 +17,16 @@
             Price : <input type="text" #price> TH
 
             <button (click)="handleClick(name.value , price.value)" type=”button”>add product</button>
-            
-            <input type="text" (keyup)="filter($event.target.value)" >
+
+            <input type="text" (keyup)="filter($event.target.value)">
             <!-- <button (click)="filter()" type=”button”>filter</button> -->
 
         </div>
     </div>
 
-    <ul  >
-            <li  *ngFor="let p of array" >
-                {{p.name}}  {{p.priceWithTH}}
-            </li>
+    <ul>
+        <li *ngFor="let p of apiService.array;let i =index" routerLink="/about/{{i}}" >
+            {{p.name}} {{p.priceWithTH}}
+        </li>
     </ul>
 </div>
